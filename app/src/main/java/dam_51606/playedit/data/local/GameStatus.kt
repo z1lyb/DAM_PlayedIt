@@ -1,4 +1,4 @@
-package dam_51606.playedit.data
+package dam_51606.playedit.data.local
 
 /**
  * Statuses a game can have in the player's library.

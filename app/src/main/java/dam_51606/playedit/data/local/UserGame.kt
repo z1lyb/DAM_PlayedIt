@@ -1,7 +1,8 @@
-package dam_51606.playedit.data
+package dam_51606.playedit.data.local
 
 /**
- * Represents a game in the user's library.
+ * Represents a game in the user's library,
+ * including the score and review they left.
  */
 data class UserGame (
     val gameId: Int,
@@ -9,6 +10,7 @@ data class UserGame (
     val status: GameStatus,
     val startDate: Long,
     val endDate: Long,
-    val evaluation: Evaluation,
+    val score: Int,
+    val review: String,
     val isFavorite: Boolean
 )

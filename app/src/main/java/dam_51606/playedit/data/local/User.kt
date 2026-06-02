@@ -1,4 +1,4 @@
-package dam_51606.playedit.data
+package dam_51606.playedit.data.local
 
 
 data class User (

@@ -1,4 +1,4 @@
-package dam_51606.playedit.data
+package dam_51606.playedit.data.model
 
 /**
  * Represents the raw data of a game, with information from the RAWG.io API
@@ -14,20 +14,4 @@ data class Game (
     val released: Long?, // release date
     val bgImage: String?,
     val bgImageAlt: String?,
-)
-
-/**
- * Raw data of a game genre
- */
-data class GameGenre(
-    val id: Int,
-    val name: String
-)
-
-/**
- * Raw data of a gaming platform
- */
-data class GamePlatform(
-    val id: Int,
-    val name: String
 )
