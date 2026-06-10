@@ -1,5 +1,7 @@
 package dam_51606.playedit.data.local
 
+import androidx.room.TypeConverter
+
 /**
  * Statuses a game can have in the player's library.
  */
