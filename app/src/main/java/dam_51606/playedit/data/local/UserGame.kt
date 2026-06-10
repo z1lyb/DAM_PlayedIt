@@ -11,8 +11,8 @@ import androidx.room.PrimaryKey
 data class UserGame (
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     // Game data
-    val gameId: Int,
-    val userId: Int,
+    val gameId: Int, // RawG API game ID
+    val userId: String,
     //Game status
     val status: GameStatus = GameStatus.NOT_STARTED,
     val isFavorite: Boolean = false,
