@@ -8,7 +8,7 @@ data class Game (
     val name: String,
     val genres: List<GameGenre>,
     val platforms: List<GamePlatform>,// platforms it's available in
-    val developer: String?,
+    val developer: List<GameDeveloper>?,
     val description: String?,
     val metacritic: Int?, // metacritic rating
     val released: Long?, // release date
