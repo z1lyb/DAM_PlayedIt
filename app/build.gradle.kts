@@ -18,6 +18,10 @@ android {
         }
     }
 
+    val localProperties = rootProject.file("local.properties")
+    val properties = Properties()
+    if(localProperties.exists()) properties.load(localProperties.inputStream())
+
     defaultConfig {
         applicationId = "dam_51606.playedit"
         minSdk = 24
@@ -26,13 +30,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // RAWG API key
+        buildConfigField("String", "API_KEY", "\"${properties["API_KEY"]}\"")
     }
 
-    // Import API key to be used in project
-    val localProperties = rootProject.file("local.properties")
-    if(localProperties.exists()) {
-        localProperties.inputStream().use { Properties().load(it) }
-    }
 
     buildTypes {
         release {
@@ -51,6 +53,7 @@ android {
     // Jetpack Compose
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
