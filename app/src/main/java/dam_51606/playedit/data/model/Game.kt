@@ -11,7 +11,7 @@ data class Game (
     val developer: List<GameDeveloper>?,
     val description: String?,
     val metacritic: Int?, // metacritic rating
-    val released: Long?, // release date
+    val released: String?, // release date
     val bgImage: String?,
     val bgImageAlt: String?,
 )

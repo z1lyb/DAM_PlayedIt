@@ -92,11 +92,15 @@ dependencies {
     // https://firebase.google.com/docs/android/setup#available-libraries
 
     // Room DB
-    val roomVersion = "2.6.1" // Use the stable version for your setup
+    val roomVersion = "2.7.0"
     // Core Room Runtime
     implementation("androidx.room:room-runtime:$roomVersion")
     // Room KSP Compiler
     ksp("androidx.room:room-compiler:$roomVersion")
     // Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$roomVersion")
+
+    // Retrofit for API communication
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 }
