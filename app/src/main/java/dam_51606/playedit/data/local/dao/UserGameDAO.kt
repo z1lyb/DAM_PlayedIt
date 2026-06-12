@@ -61,8 +61,14 @@ interface UserGameDAO {
     /**
      * Gets games in a user's library by their status
      */
-    @Query("SELECT * FROM USER_GAMES WHERE userId= :userId AND status= :status")
+    @Query("SELECT * FROM user_games WHERE userId= :userId AND status= :status")
     fun getByStatus(userId: String, status: GameStatus): Flow<List<UserGame>>
+
+    /**
+     * Gets the number of games in the user's library.
+     */
+    @Query("SELECT COUNT(*) FROM user_games WHERE userId= :userId")
+    fun getGameCount(userId: String): Flow<Int>
 
     /**
      * Counts the games with a particular status.
@@ -75,4 +81,10 @@ interface UserGameDAO {
      */
     @Query("SELECT AVG(score) FROM user_games WHERE userId= :userId AND score IS NOT NULL")
     fun getAverageScore(userId: String): Flow<Float?>
+
+    /**
+     * Gets all genres in a user's library.
+     */
+    @Query("SELECT genres FROM user_games WHERE userId = :userId")
+    fun getAllGenres(userId: String): Flow<List<String>>
 }
