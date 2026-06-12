@@ -1,5 +1,4 @@
-package dam_51606.playedit.data.local
-
+package dam_51606.playedit.data.model
 
 data class User (
     val uid: String,

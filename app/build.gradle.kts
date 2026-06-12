@@ -6,8 +6,6 @@ plugins {
     // Firebase
     //id("com.android.application")
     id("com.google.gms.google-services")
-    // KSP
-    id("com.google.devtools.ksp")
 }
 
 android {
@@ -92,17 +90,9 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:34.13.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth") // authentication
+    implementation("com.google.firebase:firebase-firestore") // firestore
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
-
-    // Room DB
-    val roomVersion = "2.7.0"
-    // Core Room Runtime
-    implementation("androidx.room:room-runtime:$roomVersion")
-    // Room KSP Compiler
-    ksp("androidx.room:room-compiler:$roomVersion")
-    // Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:$roomVersion")
 
     // Retrofit for API communication
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
