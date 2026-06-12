@@ -22,8 +22,8 @@ class GameLibraryViewModel: ViewModel() {
     val uiState: StateFlow<GameLibraryUiState> = _uiState.asStateFlow()
 
     // Repositories
-    private val gameRepository = UserGameRepository()
     private val authRepository = AuthRepository()
+    private val gameRepository = UserGameRepository()
 
     init { // the library is loaded when the view is launched
         loadLibrary()
