@@ -51,6 +51,14 @@ class GameLibraryViewModel: ViewModel() {
     }
 
     /**
+     * Defines if the screen should only show favorite games.
+     * @param favoritesOnly "favorites only" status
+     */
+    fun showFavoritesOnly(favoritesOnly: Boolean) {
+        _uiState.update { it.copy(favoritesOnly = favoritesOnly) }
+    }
+
+    /**
      * Searches for a game within the library.
      */
     fun searchLibrary(searchQuery: String) {
@@ -63,6 +71,7 @@ class GameLibraryViewModel: ViewModel() {
     val filteredGames: StateFlow<List<UserGame>> = uiState.map { state ->
         var result = state.games
         state.activeFilter?.let { filter -> result = result.filter { it.status == filter } } // filters by status
+        if (state.favoritesOnly) result = result.filter { it.isFavorite }
         if (state.searchQuery.isNotBlank())
             result = result.filter { it.gameId.toString().contains(state.searchQuery) } // filters by search query
         result
@@ -77,6 +86,7 @@ data class GameLibraryUiState(
     val isLoading: Boolean = true,
     val games: List<UserGame> = emptyList(),
     val activeFilter: GameStatus? = null,
+    val favoritesOnly: Boolean = false,
     val searchQuery: String = "",
     val error: String? = null
 )
