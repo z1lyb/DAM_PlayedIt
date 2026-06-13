@@ -1,5 +1,6 @@
 package dam_51606.playedit.data.repository
 
+import android.net.Uri
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -62,5 +63,39 @@ class AuthRepository {
      */
     fun logout() {
         auth.signOut()
+    }
+
+    /**
+     * Changes an account's display name
+     * @param newDisplayName desired new display name
+     */
+    suspend fun changeUsername(newDisplayName: String): Result<Unit> {
+        return try {
+            auth.currentUser!!.updateProfile(
+                UserProfileChangeRequest.Builder()
+                    .setDisplayName(newDisplayName)
+                    .build()
+            ).await()
+            Result.success(Unit)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    /**
+     * Updates a user's avatar.
+     * @param avatarUrl
+     */
+    suspend fun updateAvatar(avatarUrl: String): Result<Unit> {
+        return try {
+            auth.currentUser!!.updateProfile(
+                UserProfileChangeRequest.Builder()
+                    .setPhotoUri(Uri.parse(avatarUrl))
+                    .build()
+            ).await()
+            Result.success(Unit)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 }
