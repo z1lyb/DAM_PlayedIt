@@ -28,7 +28,10 @@ fun NavGraph(
     ) {
         // authentication
         composable(Screen.Login.route) {
-            LoginScreenUI()
+            LoginScreenUI(
+                onRegisterButtonClick = { navController.navigate(Screen.Register.route) },
+                onLoggedIn = { navController.navigate(Screen.Library.route) }
+            )
         }
         composable(Screen.Register.route) {
             RegisterScreenUI()
