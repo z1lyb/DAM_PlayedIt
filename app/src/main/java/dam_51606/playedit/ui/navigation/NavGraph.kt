@@ -34,7 +34,10 @@ fun NavGraph(
             )
         }
         composable(Screen.Register.route) {
-            RegisterScreenUI()
+            RegisterScreenUI(
+                onRegistered = { navController.navigate(Screen.Library.route) },
+                onLoginButtonClick = { navController.navigate(Screen.Login.route) }
+            )
         }
 
         // profile

@@ -1,6 +1,7 @@
 package dam_51606.playedit.ui.screens.auth.components
 
 import android.widget.Space
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -44,7 +45,8 @@ fun LoginCard(
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // Email field
             OutlinedTextField(
@@ -55,8 +57,6 @@ fun LoginCard(
                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
                modifier = Modifier.fillMaxWidth()
             )
-
-            Spacer(modifier = Modifier.height(8.dp))
 
             // Password field
             OutlinedTextField(
@@ -71,7 +71,7 @@ fun LoginCard(
             // Error presentation
             if (error != null) {
                 Text(
-                    text = error,
+                    text = stringResource(R.string.login_error),
                     color = MaterialTheme.colorScheme.error,
                     style = MaterialTheme.typography.bodySmall
                 )
