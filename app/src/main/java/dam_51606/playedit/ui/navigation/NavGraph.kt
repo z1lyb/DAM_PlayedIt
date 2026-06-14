@@ -2,6 +2,7 @@ package dam_51606.playedit.ui.navigation
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -10,6 +11,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import dam_51606.playedit.ui.screens.auth.LoginScreenUI
 import dam_51606.playedit.ui.screens.auth.RegisterScreenUI
+import dam_51606.playedit.ui.screens.main.LibraryScreenUI
 
 /**
  * Application navigation graph - defines the routes a
@@ -20,11 +22,13 @@ import dam_51606.playedit.ui.screens.auth.RegisterScreenUI
 @Composable
 fun NavGraph(
     navController: NavHostController = rememberNavController(),
-    startDestination: String
+    startDestination: String,
+    modifier: Modifier = Modifier
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination
+        startDestination = startDestination,
+        modifier = modifier
     ) {
         // authentication
         composable(Screen.Login.route) {
@@ -50,7 +54,11 @@ fun NavGraph(
 
         // main
         composable(Screen.Library.route) {
-            Text("Library screen")
+            LibraryScreenUI(
+                onGameClick = { gameId ->
+                    navController.navigate(Screen.GameDetails.createRoute(gameId))
+                }
+            )
         }
         composable(Screen.Search.route) {
             Text("Search screen")

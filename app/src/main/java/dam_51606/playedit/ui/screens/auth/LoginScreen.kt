@@ -2,7 +2,6 @@ package dam_51606.playedit.ui.screens.auth
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -27,12 +26,11 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dam_51606.playedit.R
-import dam_51606.playedit.ui.screens.auth.components.AppIcon
-import dam_51606.playedit.ui.screens.auth.components.LoginCard
+import dam_51606.playedit.ui.components.AppIcon
+import dam_51606.playedit.ui.components.LoginCard
 import dam_51606.playedit.viewmodel.AuthUiState
 import dam_51606.playedit.viewmodel.AuthViewModel
 

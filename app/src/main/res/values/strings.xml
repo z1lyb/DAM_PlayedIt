@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlayedIt</string>
+    <string name="app_name">PlayedIt!</string>
     <!-- Login page -->
     <string name="login_welcome">Welcome to PlayedIt!</string>
     <string name="login_label">Login</string>
@@ -7,17 +7,25 @@
     <string name="password_label">Password</string>
     <string name="account_create_label">Create new account</string>
     <string name="login_error">The email or password is incorrect.</string>
-    <!-- Register page -->
+
+    <!-- Registration page -->
     <string name="register_label">Register</string>
     <string name="username_label">Username</string>
     <string name="register_title">Account creation</string>
     <string name="register_error">Error registering. Please try again with new data.</string>
+
     <!-- Library page -->
 
     <!-- Search page -->
+
     <!-- Stats page -->
+
     <!-- Profile page -->
+
     <!-- Edit profile page -->
+
     <!-- Game details page -->
+
     <!-- Edit game details page -->
+
 </resources>

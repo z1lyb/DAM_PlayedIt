@@ -27,8 +27,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dam_51606.playedit.R
-import dam_51606.playedit.ui.screens.auth.components.AppIcon
-import dam_51606.playedit.ui.screens.auth.components.RegisterCard
+import dam_51606.playedit.ui.components.AppIcon
+import dam_51606.playedit.ui.components.RegisterCard
 import dam_51606.playedit.viewmodel.AuthUiState
 import dam_51606.playedit.viewmodel.AuthViewModel
 
@@ -73,7 +73,6 @@ fun PortraitRegisterUI(
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    var passwordVisible by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -138,7 +137,6 @@ fun LandscapeRegisterUI(
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    var passwordVisible by remember { mutableStateOf(false) }
 
     Row(
         modifier = Modifier

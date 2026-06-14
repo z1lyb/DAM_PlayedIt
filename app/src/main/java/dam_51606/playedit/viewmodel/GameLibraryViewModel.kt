@@ -70,12 +70,11 @@ class GameLibraryViewModel: ViewModel() {
      */
     val filteredGames: StateFlow<List<UserGame>> = uiState.map { state ->
         var result = state.games
-        state.activeFilter?.let { filter -> result = result.filter { it.status == filter } } // filters by status
+        state.activeFilter?.let { filter -> result = result.filter { it.status == filter } }
         if (state.favoritesOnly) result = result.filter { it.isFavorite }
         if (state.searchQuery.isNotBlank())
-            result = result.filter { it.gameId.toString().contains(state.searchQuery) } // filters by search query
+            result = result.filter { it.name.contains(state.searchQuery, ignoreCase = true) }
         result
-    // keeps flow alive for 5s after the last collection to avoid having to restart
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 }
 

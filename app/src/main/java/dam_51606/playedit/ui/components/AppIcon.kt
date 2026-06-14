@@ -1,4 +1,4 @@
-package dam_51606.playedit.ui.screens.auth.components
+package dam_51606.playedit.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
