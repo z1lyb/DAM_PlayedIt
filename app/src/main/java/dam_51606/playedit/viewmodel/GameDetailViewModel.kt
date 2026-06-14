@@ -59,6 +59,8 @@ class GameDetailViewModel: ViewModel() {
             val userGame = UserGame(
                 game.id,
                 game.genres.map { it.name },
+                game.name,
+                game.bgImage!!,
                 userId
             )
             userGameRepository.addGame(userGame)

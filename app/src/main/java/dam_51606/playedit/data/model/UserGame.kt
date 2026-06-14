@@ -9,8 +9,11 @@ data class UserGame (
     // Game data
     val gameId: Int = 0, // RawG API game ID
     val genres: List<String> = emptyList(), // game genre names for stats
+    val name: String = "", // game name
+    val coverUrl: String = "", // cover picture
+    // User data
     val userId: String = "",
-    //Game status
+    // Game status
     val status: GameStatus = GameStatus.NOT_STARTED,
     val isFavorite: Boolean = false,
     // Start and end dates
