@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -54,8 +55,8 @@ fun GameCard(
             AsyncImage(
                 model = coverUrl,
                 contentDescription = gameName,
-                contentScale = ContentScale.Fit,
-                modifier = Modifier.width(70.dp).height(70.dp)
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.width(100.dp).fillMaxHeight()
             )
 
             // Game information
