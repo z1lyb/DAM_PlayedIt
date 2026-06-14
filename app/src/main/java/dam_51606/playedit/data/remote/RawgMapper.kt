@@ -22,8 +22,8 @@ object RawgMapper {
         dto.name,
         dto.genres.map { GenreDTO ->
             GameGenre(GenreDTO.id, GenreDTO.name) },
-        dto.platforms.map { GamePlatformDTO ->
-            GamePlatform(GamePlatformDTO.id, GamePlatformDTO.name) },
+        platforms = dto.platforms.map { wrapper ->
+            GamePlatform(id = wrapper.platform.id, name = wrapper.platform.name) },
         dto.developers?.map { GameDeveloperDTO ->
             GameDeveloper(GameDeveloperDTO.id, GameDeveloperDTO.name)},
         dto.description,

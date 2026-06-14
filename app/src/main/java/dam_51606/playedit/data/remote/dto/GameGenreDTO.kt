@@ -6,5 +6,5 @@ package dam_51606.playedit.data.remote.dto
 data class GameGenreDTO (
     val id: Int,
     val name: String,
-    val slug: Int
+    val slug: String
 )

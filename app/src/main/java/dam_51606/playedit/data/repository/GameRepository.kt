@@ -1,5 +1,6 @@
 package dam_51606.playedit.data.repository
 
+import android.util.Log
 import dam_51606.playedit.data.model.Game
 import dam_51606.playedit.data.remote.RawgMapper
 import dam_51606.playedit.data.remote.RetrofitClient
@@ -18,6 +19,7 @@ class GameRepository {
             val response = api.searchGames(query = query)
             Result.success(RawgMapper.toDomainList(response.results))
         } catch (e: Exception) {
+            Log.e("GameRepository", "Search failed: ${e.message}", e)
             Result.failure(e)
         }
     }

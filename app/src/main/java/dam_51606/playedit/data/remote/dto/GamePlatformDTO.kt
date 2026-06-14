@@ -5,3 +5,7 @@ data class GamePlatformDTO (
     val name: String,
     val slug: String
 )
+
+data class GamePlatformWrapperDTO(
+    val platform: GamePlatformDTO
+)

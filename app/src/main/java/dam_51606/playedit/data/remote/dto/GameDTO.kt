@@ -11,7 +11,7 @@ data class GameDTO (
     val background_image: String?,
     val background_image_additional: String?,
     val genres: List<GameGenreDTO>,
-    val platforms: List<GamePlatformDTO>,
+    val platforms: List<GamePlatformWrapperDTO>,
     val metacritic: Int?,
     val released: String?,
     val description: String?,
