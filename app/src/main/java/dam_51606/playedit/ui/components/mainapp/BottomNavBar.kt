@@ -1,4 +1,4 @@
-package dam_51606.playedit.ui.components
+package dam_51606.playedit.ui.components.mainapp
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar

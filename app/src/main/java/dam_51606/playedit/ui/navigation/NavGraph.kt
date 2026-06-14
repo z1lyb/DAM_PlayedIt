@@ -12,6 +12,7 @@ import androidx.navigation.navArgument
 import dam_51606.playedit.ui.screens.auth.LoginScreenUI
 import dam_51606.playedit.ui.screens.auth.RegisterScreenUI
 import dam_51606.playedit.ui.screens.main.LibraryScreenUI
+import dam_51606.playedit.ui.screens.main.SearchScreenUI
 
 /**
  * Application navigation graph - defines the routes a
@@ -61,7 +62,11 @@ fun NavGraph(
             )
         }
         composable(Screen.Search.route) {
-            Text("Search screen")
+            SearchScreenUI(
+                onGameClick = { gameId ->
+                    navController.navigate(Screen.GameDetails.createRoute(gameId))
+                }
+            )
         }
         composable(Screen.Statistics.route) {
             Text("Stats screen")

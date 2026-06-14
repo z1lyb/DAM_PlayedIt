@@ -38,7 +38,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import dam_51606.playedit.R
 import dam_51606.playedit.data.model.GameStatus
 import dam_51606.playedit.data.model.UserGame
-import dam_51606.playedit.ui.components.GameCard
+import dam_51606.playedit.ui.components.mainapp.GameCard
 import dam_51606.playedit.viewmodel.GameLibraryUiState
 import dam_51606.playedit.viewmodel.GameLibraryViewModel
 

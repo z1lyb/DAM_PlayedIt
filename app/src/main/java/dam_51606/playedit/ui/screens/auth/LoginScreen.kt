@@ -30,7 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dam_51606.playedit.R
 import dam_51606.playedit.ui.components.AppIcon
-import dam_51606.playedit.ui.components.LoginCard
+import dam_51606.playedit.ui.components.auth.LoginCard
 import dam_51606.playedit.viewmodel.AuthUiState
 import dam_51606.playedit.viewmodel.AuthViewModel
 

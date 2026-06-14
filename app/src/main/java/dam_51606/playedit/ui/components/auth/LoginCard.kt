@@ -1,4 +1,4 @@
-package dam_51606.playedit.ui.components
+package dam_51606.playedit.ui.components.auth
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
