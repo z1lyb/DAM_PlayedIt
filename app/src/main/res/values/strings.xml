@@ -15,6 +15,10 @@
     <string name="register_error">Error registering. Please try again with new data.</string>
 
     <!-- Library page -->
+    <string name="library_search">Search</string>
+    <string name="all_filter">All</string>
+    <string name="favs_filter">Favorites</string>
+    <string name="no_games">No games found.</string>
 
     <!-- Search page -->
 

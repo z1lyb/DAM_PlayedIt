@@ -32,8 +32,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import dam_51606.playedit.R
 import dam_51606.playedit.data.model.GameStatus
 import dam_51606.playedit.data.model.UserGame
 import dam_51606.playedit.ui.components.GameCard
@@ -90,7 +92,7 @@ fun PortraitLibraryUI(
         OutlinedTextField(
             value = uiState.searchQuery,
             onValueChange = onSearchChange,
-            placeholder = { Text("Search library...") },
+            placeholder = { Text(stringResource(R.string.library_search)) },
             leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
@@ -157,7 +159,7 @@ fun LandscapeLibraryUI(
         // left sidebar — search + filters
         Column(
             modifier = Modifier
-                .width(200.dp)
+                .width(150.dp)
                 .fillMaxHeight()
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -165,7 +167,7 @@ fun LandscapeLibraryUI(
             OutlinedTextField(
                 value = uiState.searchQuery,
                 onValueChange = onSearchChange,
-                placeholder = { Text("Search...") },
+                placeholder = { Text(stringResource(R.string.library_search)) },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth()
@@ -175,14 +177,14 @@ fun LandscapeLibraryUI(
             FilterChip(
                 selected = uiState.activeFilter == null && !uiState.favoritesOnly,
                 onClick = { onFilterChange(null); onFavoritesToggle(false) },
-                label = { Text("All") },
+                label = { Text(stringResource(R.string.all_filter)) },
                 modifier = Modifier.fillMaxWidth()
             )
 
             FilterChip(
                 selected = uiState.favoritesOnly,
                 onClick = { onFavoritesToggle(!uiState.favoritesOnly) },
-                label = { Text("Favorites") },
+                label = { Text(stringResource(R.string.favs_filter)) },
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Favorite,
@@ -214,10 +216,11 @@ fun LandscapeLibraryUI(
                         CircularProgressIndicator()
                     }
                 }
+
                 filteredGames.isEmpty() -> {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         Text(
-                            text = "No games found.",
+                            text = stringResource(R.string.no_games),
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
